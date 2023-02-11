@@ -18,6 +18,7 @@
 	</h2>
 	<label for="loan" class="text-sm font-bold">Loan Amount</label>
 	<input
+		data-test="loan-amount"
 		id="loan"
 		type="number"
 		bind:value={loanAmount}
@@ -26,6 +27,7 @@
 
 	<label for="interest" class=" text-sm font-bold">Interest Rate</label>
 	<input
+		data-test="loan-interest-rate"
 		id="interest"
 		type="number"
 		bind:value={interestRate}
@@ -33,9 +35,17 @@
 	/>
 
 	<label for="years" class="text-sm font-bold">Years</label>
-	<input id="years" type="number" bind:value={years} class="input input-bordered w-full max-w-xs" />
+	<input
+		data-test="loan-years"
+		id="years"
+		type="number"
+		bind:value={years}
+		class="input input-bordered w-full max-w-xs"
+	/>
 
 	<div class="text-sm font-bold mt-2 flex">
-		Monthly Payment: <div class="text-primary-content ml-1">${payment.toFixed(2)}</div>
+		Monthly Payment: <div class="text-primary-content ml-1">
+			$<span data-test="loan-result">{payment.toFixed(2)}</span>
+		</div>
 	</div>
 </div>

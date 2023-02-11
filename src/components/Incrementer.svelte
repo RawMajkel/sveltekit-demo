@@ -6,7 +6,11 @@
 	}
 </script>
 
-<button on:click={increment} disabled={$count >= 100} class="btn btn-square btn-primary"
+<button
+	on:click={increment}
+	data-test="counter-increment-button"
+	disabled={$count >= 100}
+	class="btn btn-square btn-primary"
 	><svg
 		xmlns="http://www.w3.org/2000/svg"
 		fill="none"

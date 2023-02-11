@@ -6,7 +6,11 @@
 	}
 </script>
 
-<button on:click={decrement} disabled={$count <= 0} class="btn btn-square btn-secondary"
+<button
+	on:click={decrement}
+	data-test="counter-decrement-button"
+	disabled={$count <= 0}
+	class="btn btn-square btn-secondary"
 	><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
 		<path
 			fill-rule="evenodd"

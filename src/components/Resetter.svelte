@@ -6,7 +6,11 @@
 	}
 </script>
 
-<button on:click={reset} type="button" class="btn btn-square btn-accent"
+<button
+	on:click={reset}
+	data-test="counter-reset-button"
+	type="button"
+	class="btn btn-square btn-accent"
 	><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
 		<path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
 		<path

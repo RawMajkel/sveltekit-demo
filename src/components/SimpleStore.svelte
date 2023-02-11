@@ -9,7 +9,7 @@
 <div class="flex flex-col w-full gap-4">
 	<div class="flex justify-between items-center">
 		<div class="text-xl">The count is</div>
-		<div class="text-6xl">{$count}</div>
+		<div data-test="counter-value" class="text-6xl">{$count}</div>
 	</div>
 	<div class="flex justify-between mt-2 gap-2">
 		<Incrementer />
