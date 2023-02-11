@@ -16,6 +16,7 @@
 <li in:fade data-test="todo-item" class="flex justify-between items-center w-full">
 	<label>
 		<input
+			data-test="todo-item-checkbox"
 			type="checkbox"
 			role="checkbox"
 			checked={todo.done}
@@ -33,6 +34,7 @@
 	<div class="tooltip" data-tip="Delete Todo">
 		<button
 			on:click={() => dispatchEvent('delete')}
+			data-test="todo-item-delete"
 			aria-label="Delete Todo"
 			class="btn btn-square btn-error"
 			><svg

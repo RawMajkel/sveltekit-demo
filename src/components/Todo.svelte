@@ -6,7 +6,7 @@
 	const createTodo = (text: string, done = false): TodoType => ({ id: ++lastId, text, done });
 
 	let todoText = '';
-	let todos: TodoType[] = [createTodo('learn SvelteKit', true)];
+	let todos: TodoType[] = [createTodo('learn SvelteKit', false)];
 
 	$: upcompletedCount = todos.filter((t) => !t.done).length;
 	$: status = `${upcompletedCount} of ${todos.length} remaining`;
