@@ -13,7 +13,7 @@
 	export let todo: TodoType;
 </script>
 
-<li in:fade class="flex justify-between items-center w-full">
+<li in:fade data-test="todo-item" class="flex justify-between items-center w-full">
 	<label>
 		<input
 			type="checkbox"
@@ -24,6 +24,7 @@
 			class="checkbox checkbox-success"
 		/>
 		<span
+			data-test="todo-item-text"
 			class={`${
 				todo.done ? ' line-through italic' : ''
 			} text-base-content p-2 text-left flex-1 text-sm`}>{todo.text}</span

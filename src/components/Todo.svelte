@@ -58,6 +58,7 @@
 		class="flex justify-between align-middle items-center gap-2"
 	>
 		<input
+			data-test="todo-input"
 			type="text"
 			placeholder="enter a new todo"
 			bind:value={todoText}
@@ -65,6 +66,7 @@
 		/>
 		<div class="tooltip" data-tip="Add Todo">
 			<button
+				data-test="todo-input-submit"
 				disabled={!todoText}
 				aria-label="Enter a new Todo"
 				class="btn btn-square btn-secondary"
@@ -81,7 +83,7 @@
 			</button>
 		</div>
 	</form>
-	<ul class="flex flex-col items-center justify-end w-full space-y-2">
+	<ul data-test="todo-list" class="flex flex-col items-center justify-end w-full space-y-2">
 		{#each todos as todo (todo.id)}
 			<TodoList
 				{todo}
