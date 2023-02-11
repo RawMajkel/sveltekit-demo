@@ -1,8 +1,8 @@
 <script>
 	import '../app.css';
 	import { page } from '$app/stores';
-	import { getAppAuth, signIn } from '$src/Auth';
-	import authStore from '$stores/authStore';
+	// import { getAppAuth, signIn } from '$src/Auth';
+	// import authStore from '$stores/authStore';
 	import SvelteLogoSvg from '$components/SvelteLogoSVG.svelte';
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
@@ -23,15 +23,15 @@
 	];
 
 	onMount(() => {
-		if (browser) {
-			getAppAuth().onAuthStateChanged((user) => {
-				authStore.set({
-					isLoggedIn: user !== null,
-					user: user ?? undefined,
-					firebaseControlled: true
-				});
-			});
-		}
+		// if (browser) {
+		// 	getAppAuth().onAuthStateChanged((user) => {
+		// 		authStore.set({
+		// 			isLoggedIn: user !== null,
+		// 			user: user ?? undefined,
+		// 			firebaseControlled: true
+		// 		});
+		// 	});
+		// }
 	});
 </script>
 
@@ -66,14 +66,14 @@
 						<!-- svelte-ignore a11y-label-has-associated-control -->
 						<label tabindex="0" class="btn btn-ghost btn-circle avatar">
 							<div class="w-10 rounded-full">
-								{#if $authStore.isLoggedIn}
+								<!-- {#if $authStore.isLoggedIn}
 									<img
 										src={`https://ui-avatars.com/api/?font-size=0.33&background=ff3e00&color=fff&name=${$authStore.user?.displayName}`}
 										alt={$authStore.user?.displayName}
 									/>
 								{:else}
 									<img src="https://placeimg.com/80/80/people" alt="profile" />
-								{/if}
+								{/if} -->
 							</div>
 						</label>
 						<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
@@ -82,13 +82,13 @@
 							class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-300 rounded-box w-52"
 						>
 							<!-- svelte-ignore a11y-missing-attribute -->
-							{#if $authStore.isLoggedIn && browser}
+							<!-- {#if $authStore.isLoggedIn && browser}
 								<li>
 									<button on:click={async () => await getAppAuth().signOut()}>Logout</button>
 								</li>
 							{:else}
 								<li><button on:click={() => signIn()}>Login</button></li>
-							{/if}
+							{/if} -->
 							<li>
 								<a href="/about"> About </a>
 							</li>
